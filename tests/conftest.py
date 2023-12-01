@@ -2,6 +2,7 @@
 import pytest
 
 from src.item import Item
+from src.keyboard import KeyBoard
 from src.phone import Phone
 
 
@@ -12,11 +13,11 @@ def item_class():
     Returns:
         tuple: A tuple containing two item objects.
     """
-    phone = Item('iSung', 1500.50, 34)
-    phone.pay_rate = 1.5
+    phone_item = Item('iSung', 1500.50, 34)
+    phone_item.pay_rate = 1.5
     console = Item('XStation', 987.50, 23)
     console.pay_rate = 0.5
-    return phone, console
+    return phone_item, console
 
 
 @pytest.fixture
@@ -40,3 +41,15 @@ def phone() -> Phone:
         Phone: A Phone object with test values.
     """
     return Phone("Test Phone", 500, 10, 2)
+
+
+@pytest.fixture
+def keyboard():
+    """
+    Fixture that creates an instance of the KeyBoard class for testing.
+
+    Returns:
+        KeyBoard: An instance of the KeyBoard class with the specified
+        parameters.
+    """
+    return KeyBoard('Keyboard', 10.0, 5)
