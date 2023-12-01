@@ -184,3 +184,6 @@ def test_addition_other_is_not_instance():
     item = Item("Test Item", 100, 5)
     total_quantity = item + 10
     assert total_quantity is None
+
+def test_instantiate_from_csv_error():
+    assert Item.instantiate_from_csv() is None
